@@ -1,0 +1,15 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body{
+ background-image: url(https://st-gdefon.gallery.world/wallpapers_original/183286_gallery.world.jpg);
+    overflow-x: hidden;
+    min-height: 100%;
+    width: 100%;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+}

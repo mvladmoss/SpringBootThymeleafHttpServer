@@ -1,0 +1,29 @@
+version: "3"
+services:
+  postgres:
+    container_name: mypostgres
+    image: mypostgres
+    network_mode: bridge
+    ports:
+      - 5432:5432
+    environment:
+         - POSTGRES_PASSWORD=bar
+         - POSTGRES_USER=vlad
+         - POSTGRES_DB=student_handbook
+    restart: unless-stopped
+# APP*****************************************
+  springbootapp:
+    image: springbootapp:latest
+    network_mode: bridge
+    container_name: springbootapp
+    expose:
+      - 8084
+    ports:
+      - 8084:8084
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    links:
+      - postgres
+volumes:
+  postgres-data:
